@@ -290,8 +290,64 @@ create a security group
 
 ### AWS Integrated Services
 
-#### Application Load Balancer
+talk about key services on aws and use cases 
 
+
+#### Application Load Balancer
+- abillity to enable additional routing services
+- why use app laod balancer 
+- use container for microservices and routew requests to them 
+- different container, lsitening on different poirts you can set up routing rules for different locations
+- Listeners = proicess that checks for connection request using protocol and port 
+- Target = target for destination traffic based on the established lsitner rules
+- Target Group = routes requests tto one or more regisstered target using protocol and port number specified
+
+- Supported Protocols: HTTP, HTTPS, HTTP/2, WebSockets
+- ClouWatch Metrics: additional load balance metrics and target group metric dimension
+- Access Logs: connection details for websockets cpnnections
+- HealthChecks: insight into target and application health at more granular level
+
+- path base routing - route based on path url 
+- host based routing can route by host
+
+create a load balancer
+- go to ec2 console
+- (have some instances ready)
+- copy public ip of instance 
+- go to the public ip (website that ione contaienr hsots
+- go to other container public ip with other website
+- side navigation click on Load Balancers
+- create load balancer (choose application laod balancer)
+- name the load balancer (dns friendly name)
+- leave ipv4 default 
+- default has is listening on port 80
+- add listener http - 443
+- select avaiulabillty zone (you have to use 2 - so vpc and use the 2 u used for you subnets )
+- key: name , value: application load balancer (use a more dexcriptive name for your)
+- skip security settings
+- deselect security group and select your security group for xour vpc
+- configure routing
+- keep new target group
+- naem it as yu please
+- protocol http and port 80
+- health check destination http (test.html)
+- leave hgealth check rest to default
+- select test instance and add to registered 
+- next get to review page and check out you settings
+- click create and hoepfully everything went ok
+- register second target 
+- create a target group
+- target group name = demo2
+- check http request port 443
+- health check http test.html
+- leave rest to default on health check
+- create the target group
+- yay success
+- click on laod balancer on the left and verify both ports listening (80 and 443)
+- view and edit rules to stop forward 443 to demo1 , edit "THEN" forward to demo2
+- test to verify that traffic is sent to each contaienr
+- copy dns name and open first container in browser
+- copy dns name of conatienr two and paste in browser - this should forward to container2 
 
 #### Auto Scaling
 
