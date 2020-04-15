@@ -537,6 +537,11 @@ how to use this sweet SNS:
 
 
 #### Amazon CloudWatch
+- monitoring servcie real time for resources and applications
+ - collect and track metrics
+ - collect and filter log files
+ - set alarms
+ - auto react to changes
 
 
 #### Amazon CloudFront
