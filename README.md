@@ -459,7 +459,36 @@ Benefits:
 
 
 #### AWS Lambda
+serverless compute service
+- lets u run code without provisioning service
+- sclaes automatically and runs code
+- only pay for cpompute you use
+- dont pay for compute time when not used
+- virtually run any application 
+- fully managed service
+- suppoort: nodejs, java, c# and python
+- event driven computing , like api requests or moonitoring m,eesages
+- develop serverless applications 
 
+image recoigniton app 
+
+user maeks photo -> mobile app uploads to S3 -> aws lambda is triggered and calls recognition -> detect objects and scense and returns labels -> sernt to lanbda -> sent to S3 -> sent to app and user
+
+- pick lambad form management console
+- create function and name function
+- choose runtime and name handler
+- choose execution role 
+- choose memory
+- choose execution timeout
+- config trigger
+- example to use cloudwatch trigger to watch something
+- when SNS happens then run lambda
+
+Use Cases:
+- process objects to S3
+- IoT
+- operrating serverless websites
+- dynmaic updates and configs
 
 #### AWS Elastic Beanstalk
 
