@@ -350,10 +350,84 @@ create a load balancer
 - copy dns name of conatienr two and paste in browser - this should forward to container2 
 
 #### Auto Scaling
+- help ensure that you have the correct number of ec2 instances available to handle your workload
+- add or remove ec2 instances on conditions you specify
+- optimize perofmance and minimize costs
+- on-demand resource provisioning
+- scaling out = launch instances at condition like cpu utilization 80%
+- scaling in = terminate instances
+
+Auto Scaling Components
+- Launch configuration
+what will be launched by autocaling ?
+think of everything needed to start ec2
+
+- auto scaling group
+which vps and subnet 
+which load balancer 
+minimun instances
+desired capacity
+
+- auto scaling policy
+when to laucnch ?
+scheduled, on-demand, scale out policiy, scale in policy
+
+Dynamic Auto Scaling
+- cloudwatch alarm triggers autoscaling alarm which will scale out or in 
+
+Sample cloudwatcvh alarm 
+- whenever `CPUUtilization` is `>=` `80` for `1` consecutice period (default is 5 minutes per period)
+  - whenever this alarm `State is ALARM` From reource type `AutoScaling` From the: `IREASG`take this action: `increase group size - add 2 instances`
+
+
+Konfigure
+- open ec2
+- left pane click auto scaling groups
+- click on create auto scaling grroup
+- create launch configuration
+- next steps basically same as EC2 creation
+- name launch configuration 
+- leave the default settings for storage and security groups
+- revies and create
+- choose existing keypair and create launch config
+- create auto scaling group 
+- group anme 
+- group size (for example 2)
+- choose network to deploy to  (VPC)
+- pick subnet to deploy to 
+- configure scaling policies
+- set sacaling between 2 and 8 (min - max)
+- taregt value avg of 60% (auto create and terminate instances)
+- crate auto scaling group
+(now you will see 2 pending instances if you picked 2 above)
 
 
 #### Amazon Route 53
+DNS servie
+- route end users to applications
+- user -> browser -> yourapp.com -> ISP -> route 53 -> yourapp.com (send back IP and shows user your app)
 
+Route 53
+- create hosted zone (where yyour namesevrer DNS data is kept)
+- specify fully qualified domain name (use route 53 or external domain)
+- you can have internal or external hosted zones
+
+Create A hosted zone
+- werbapp on EC2 with public IP
+- routre53 -> create a hosted zone
+- put your domain in domain name 
+- type public hosted zone 
+- create record set (create subdomains for app) -> www.yourdomain.com -> type A IPv4 -> Value= EC2 public IP
+- in value you can put load balancer or S3 name as well
+- save record set and it is ready to route 
+
+Route 53 offers different types of DNS resolutions:
+- simple routing
+- geo-location
+- failover
+- weighted round robin
+- latency based
+- multi value answer
 
 #### Amazon Relations Databaase Services
 
