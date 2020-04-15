@@ -116,7 +116,8 @@ What are the benefits of using amazon ec2 instances compared to physical infrast
 Which components of AWS infrastrucutre can be described as multiple isolated locations within one geographic area ?
 - Availabillty Zones
 
-
+Which of the follwoiung staetements is true of amazon virtual private cloud ?
+- you can create ,amy subnets in a VPC altough fewer is recommended to limit complexity
 
 #### EC2 - Elastic Compute CLoud
 what is ec2 - elastic compute cloud
@@ -285,6 +286,38 @@ create a security group
 - https - tcp - 443 - 0.0.0.0(0
 - click create 
 - now we hhave a security grooup for a web server
+
+
+### AWS Integrated Services
+
+#### Application Load Balancer
+
+
+#### Auto Scaling
+
+
+#### Amazon Route 53
+
+
+#### Amazon Relations Databaase Services
+
+
+#### AWS Lambda
+
+
+#### AWS Elastic Beanstalk
+
+
+#### Amazon Simple Notification Service
+
+
+#### Amazon CloudWatch
+
+
+#### Amazon CloudFront
+
+
+#### Amazon CloudFormation
 
 
 Inline `code` has `back-ticks around` it.
