@@ -101,6 +101,10 @@ power to scale computignn resources up and down quickly = elasticity
 
 
 
+
+
+
+
 ### AWS Core Services
 
 talk about key services and common use cases
@@ -111,6 +115,8 @@ What are the benefits of using amazon ec2 instances compared to physical infrast
 
 Which components of AWS infrastrucutre can be described as multiple isolated locations within one geographic area ?
 - Availabillty Zones
+
+
 
 #### EC2 - Elastic Compute CLoud
 what is ec2 - elastic compute cloud
@@ -219,7 +225,45 @@ edge locations
 - used to deliver content to customers
 - close to customers
 
-#### VPC
+#### VPC - Amazon Virtual Private Cloud
+- is a networking servide that will meet your networking requirements
+- create private network in cloud, uses same concepts as on premise network
+- allow complete control of network configuration, you can isolate and expose resources inside VPC
+- offers several layers of security contzrols, allow and deny specific internet and internal traffic
+- other aws services deployy into VPC, services inherit security built into network 
+
+- is AWS foundational service and intigrates with all other standard srevices like ec2, rds , s3 , dynamo db etc.
+##### features
+builds upon globalö infrastructure of regions and infrastructres
+hgihly available
+amazon vpc liuves within a region 
+multiple vpcs per account
+
+subnets
+used to divide amazon vpc
+allows amazton vpc to span multiple availabillty zones
+
+route table 
+control traffiic going in and out
+
+iinternet gateway (IGW)
+allow acces toi the internet from amazon vpc
+
+nat gateways
+allows private subnet resources to access internet
+
+Network acces control lists (NACL)
+control access tto subnets, stateless
+
+build an VPC
+- choose region 
+- defgine address space (like 10.0.0.0/16)
+- make a subvnet like 10.0.0.0/24
+- specify subnet live in Availabillty zone A
+- make another subnet with 10.0.1.0/24
+- this subent also lives in availabillty zone A
+- next add a Internet Gateway - hook it up to Subnet A (will be public subnet
+- SUbent B will be a private subnet not accessible from thge interent 
 
 
 #### Security Groups
