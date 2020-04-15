@@ -288,12 +288,19 @@ create a security group
 - now we hhave a security grooup for a web server
 
 
+
+
+
+
 ### AWS Integrated Services
 
 talk about key services on aws and use cases 
 
 You have an application composed of individual services. You need to route a request to a service based on the content of the request. Which service should you use?
 - Elastic Load Balancing
+
+What is the firststep in getting started with AWS Lambda?
+- upload your code
 
 
 #### Application Load Balancer
@@ -491,9 +498,42 @@ Use Cases:
 - dynmaic updates and configs
 
 #### AWS Elastic Beanstalk
+- platform as a service
+- plug code into beanstalk
+- allows for quick deployment of your application
+- reduces management complexity
+- choose instance type -> choose databse type -> set adn adjust autoscaling
+- update application , access server log files, enable https on laod balacner
+- supports a lot of differen paltforms (docker, go, java , python , node js ,php....(basiucally any web tech))
+- **create application -> upload version** -> launch environmetn -> manage evironment (last parts are handled by beanstalk=
+
+use beanstalk
+- u have a python web service
+- zip the application
+- choose elastic beanstalk from management overview
+- create new application
+- enter the new name and description 
+- create the environment (example web server environment)
+- enter domain , platform (like python), a description
+- upload your code (python zip file)
+- create environment
 
 
-#### Amazon Simple Notification Service
+#### Amazon SNS - Simple Notification Service
+- flexible fully messaged pub/sub meesaging mobile communication service
+- coordinates delivery of messages to subscribing endpoints to clients
+- easy to setup, operate and send reliable communications
+- decouple and scale microservices, distributed systems and serveröless applications
+
+how to use this sweet SNS:
+- SNS dashboard
+- create topic
+- enter topic name and display name 
+- Other topic actions -> basic view -> everyone (usually specify people to send to)
+- create subscription
+- for email - pick email in prtocoll
+- endpoint is your email address
+- confirm subscription in your email
 
 
 #### Amazon CloudWatch
