@@ -267,7 +267,24 @@ build an VPC
 
 
 #### Security Groups
+- sact as built in firewall
+- control accessabillty of instances
+- filter traffic to instances
+- allow treaffic in and out
+- configure security roles
+- you can make an instance compeletely private or public 
 
+create a security group
+- click on ec2
+- click on network and securioty
+- create security group
+- name "web-server-sg"
+- descriuption "allow web traffic"
+- allow http/https
+- http - tcp - 80 - 0.0.0.0/0
+- https - tcp - 443 - 0.0.0.0(0
+- click create 
+- now we hhave a security grooup for a web server
 
 
 Inline `code` has `back-ticks around` it.
