@@ -100,6 +100,132 @@ can use all of the above ways interchangibly
 power to scale computignn resources up and down quickly = elasticity 
 
 
+
+### AWS Core Services
+
+talk about key services and common use cases
+
+What are the benefits of using amazon ec2 instances compared to physical infrastreucute ?
+- pay only for the capacity you use 
+- the abillity to have different storage requirementss
+
+Which components of AWS infrastrucutre can be described as multiple isolated locations within one geographic area ?
+- Availabillty Zones
+
+#### EC2 - Elastic Compute CLoud
+what is ec2 - elastic compute cloud
+compute - different servers
+cloud - cloud hosted
+elastic - scalable
+
+- pay as you go 
+- broad hardware and software selction
+- global hostin g
+
+build an ec2 instance
+- login to aws console
+- choose region
+- launch ec2 wizard
+- select ami - amazon machine image
+- select instance type (hardware)
+- configure network
+- configure storage 
+- add tags - give friendly name
+- configre security group - set of firewall rules (creates auto rule for ssh connect)
+(add rules like open port 80 and name the security group
+- click launch 
+- create a key pair and downlaod private key (this key is needed to connect vie ssh to you ec2 instance)
+- access the instance , below you can find public ip and isntance name (default user ec2-user) use putty to connect an dconfigure private key then you can connect (ssh auth and add private key we downloaded earlier)
+(on windows use puttygen and transform thew ssh private key .pem  to .ppk)
+
+
+#### EBS - Elastic Block Storage
+- choose between hdd or ssd (pay as you use)
+- persistent and customizable block storage for your ec2 
+- automatically replicatable in the same availabillity zones
+- backup using point in time snapshots (copy snapshots and recover instantly) 
+- easy and tranparent encryption at no additional cost (encryption happens on ec2 site)
+- elastic volumes, meaning increase capacity or change hardware from hdd or ssd without havong to stop instances
+
+
+- volume has to be in same zone as ec2 instance 
+- create volume
+- specify availabillty zone (same as ec2 instace
+- pick volume type 
+- click create volume 
+- attach to ec2 - click actions and attach , click the desired volume and name the device (like /dev/sdb)
+- now go to instances and connect to instance (copy and paste the ssh command)
+- check storage with `lsblk` 
+- create a filesytsem on the new storage with `sudo mke2fs /dev/xvdb` 
+- now linux is creating filesystem on volume 
+- now you can mount volume as folder into linux machine 
+- to mount we do `sudo mount /dev/xvdb /mnt` , now volume mounted in /mnt folder
+- `cd /mnt` , now we are on the new block, you can do everythiong like make a file and folder etc.
+- if i want i can `unmount /mnt` and detach the volume back in the aws console, i could attach it to another instance in the same availabiltyx zone 
+- add tag value to describe what you used it for 
+- tags are very important for example anme the volume "Databasse VOlume" if it hosts a databse
+
+#### S3 - Simple Storage Service
+- fully managed storage service (simple api for storing and grabbing data)
+- store virtually unlimited number of object 
+- can store any type of data or file 
+- supports objects several tb in size 
+- access anytime, from anywhere, also access privately through vpc endpoint
+- rich security tools, per access control , security policies , encrypt in transit or encrypt on server
+
+vreate bucket to hold data 
+- specify a key used to retireve file late r
+- name like a filepath like "files/test.py"
+- highly scalable 
+- only billed fo what you use
+- url = bucketname.region-specific.objectkey
+- suitable for wiude range of scenarions 
+- app data , static web hosting, bnbackup and disaster recovery, staging area for big data ..
+
+s3 in action
+- go to amazon s3 section through managem,nt console
+- create bucket 
+- set bucket naem (dns compliant)
+- set region (best to use the region where all your stuff is at
+- hit create and now we have out bucket
+- click on new bucket and you can uplaod files (drag and drop)
+- use aws cli, so i have a local file i want to vcopy to aws s3 bucket 
+ in cli i type  `aws s3 cp awesome.html s3://mybucketname/awesome.html`
+- i can also upload an entire folder usin "sync" like so 
+  `aws s3 sync my-folder s3://mybucketname/my-files`
+- in managemt console , check out the files we uplaoded and click on one 
+- here you see some options to modify permissions on the files etc.
+
+
+#### AWS Global Infrastructure
+
+aws regions
+- geographioc regions houseing 2 or more availabillty zone
+- optimize latency while minimizing costs
+- regulatory stuff
+- you can deploy reosurces in multiple regions 
+- regions completely seperated services 
+- not all resources are available in all regions 
+
+availabilltyy zones
+- collection of datacenterts in region
+- each zone is seeperated physically and logically
+- netwrokign are connected to each other 
+- hoooked up through different electric and interne tprovider
+- ensure data redundaqncy and availabillty
+
+edge locations
+- host a CDN name cloudfornt 
+- used to deliver content to customers
+- close to customers
+
+#### VPC
+
+
+#### Security Groups
+
+
+
 Inline `code` has `back-ticks around` it.
 
 ```python
