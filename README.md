@@ -292,6 +292,9 @@ create a security group
 
 talk about key services on aws and use cases 
 
+You have an application composed of individual services. You need to route a request to a service based on the content of the request. Which service should you use?
+- Elastic Load Balancing
+
 
 #### Application Load Balancer
 - abillity to enable additional routing services
@@ -429,7 +432,30 @@ Route 53 offers different types of DNS resolutions:
 - latency based
 - multi value answer
 
-#### Amazon Relations Databaase Services
+#### AmazonRDS -  Relations Database Services
+- cost efficient and resizable capacity
+- lets you focus on applications and not on maintnance
+- primary focus is your dat a
+- handles all maintnance like os patches, scaliung etc
+- managed RDS service
+
+Database Instance
+- consists of: cpu, memory, network perofrmace
+- storage: magnetic, SSDm provisioned IOPS
+- db engines: mysql, amazon aurora, Microsoft sql, postgresql , mariadb, oracle
+
+- you can use a RDS inside of a VPC
+- usually isolated in a subnet
+- configure databse instance for high availabilty with multi- availabillty zone config
+
+Benefits:
+- supports most demanding databse applications
+- high scalable
+- high performance
+- no downtime scaling
+- easy to administer
+- available and durable
+- secure and compliant 
 
 
 #### AWS Lambda
