@@ -542,6 +542,44 @@ how to use this sweet SNS:
  - collect and filter log files
  - set alarms
  - auto react to changes
+ - metrics like cpu utilization and stauts check and pageviewcount
+ - you can trigger cloudwatch alarm and trigger email,sms or autoscale event
+ - respond to satet changes
+ - auto invoke lambda function
+ - log s3 
+ - direct api records from cloudtrail to akinesis stream for detailed analysis
+ 
+ Metrics
+ - data about performance comes from
+ - time ordered data points
+ - free (ec2, ebs,rds)
+ - own application cost a fee
+ 
+ Alarms
+ - watches a single metric
+ - performs one of more action
+  - start stop ec2
+  - autoscale
+  - sms or email
+  - set threshold for actions
+ 
+ Events
+ - near real time stream of data
+ - simple rules to match events and route them to target/s
+ - aware if operational chanegs occur
+ - respons to these operational changes (takes corrective measures)
+ - schedule autoamted actions that sel-trigfger at certain times
+ 
+ Logs
+ - monitor and torubleshoot systems and appls
+  - monitor logs for specific phrases, values, patterns
+ - retrieve the associated log data from CLoudWatch logs
+ - includes installable agent for OS at no charge
+ - real time logging
+ - monitor cloudTrail logged events (usefull for compliance)
+ - archive log data (we can also do data nalysis on them etc.)
+ 
+ Dashboards
 
 
 #### Amazon CloudFront
