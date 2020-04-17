@@ -583,9 +583,44 @@ how to use this sweet SNS:
 
 
 #### Amazon CloudFront
+fancy CDNs
+- more than 80 eddge locations in multiple countires around the world
+- use cloufront in multiple locations for lower latency for users
+- global and groeing
+- low cost for traffic out
+- simpyk integrated into ceert manager, s3 and web 
+
+Config CDN
+- management console and click on create distribution
+- pick type of CDN web or video ?
+- specify origin(like S3 bucket) and behavior(basically URL pattern with origin)
+ - example you can use S3 for CDN with image requests and unse EC2 for something else
 
 
 #### Amazon CloudFormation
+- simplifies repeadetly and predictable resource provision
+- automate provisioning of reources
+- fully managed service
+- create updatre and delete resources
+- template file -> cloudformation -> construct -> Stack (environment)
+- control cloudformation over managemnt, cli or sdk 
+- Stacks are resource groups (they are a unit of deployment)
+- tempaltes are json or yaml (self documenting your environment)
+- templates are infrastructure as code meaning you ccontrol infrastrucct through code
+- to run cloud formation the templates have to be error free and have to have permissions
+
+Use CloudFormation Designer
+- click CLoudFormation in management console
+- create new stack
+- design template
+- click ec2 and drag VPC over in the grid
+- control-shift in template below show lsit of available inputs
+- enter cidr range in ec2 instance
+- upper left click on creatre stack
+- click next and name stack 
+- you can add keys here butclick next for now 
+- go to services and VPC and check if your vpc was create d
+
 
 
 Inline `code` has `back-ticks around` it.
