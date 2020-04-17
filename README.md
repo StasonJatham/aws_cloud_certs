@@ -302,6 +302,9 @@ You have an application composed of individual services. You need to route a req
 What is the firststep in getting started with AWS Lambda?
 - upload your code
 
+Which of the following best describes Amazon CloudFront
+- Speeds up the delivery of content to viewers across the globe
+
 
 #### Application Load Balancer
 - abillity to enable additional routing services
