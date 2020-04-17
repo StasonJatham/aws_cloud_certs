@@ -624,6 +624,87 @@ Use CloudFormation Designer
 - you can add keys here butclick next for now 
 - go to services and VPC and check if your vpc was create d
 
+### Amazon Architecure
+
+#### Well Architected Framework
+- access and imporve own architecture
+- understand how design decisions impact business
+- learn the five pillars and design principles
+ - security
+ - reliabillity
+ - performabillity
+ - cost optimization
+ - operational excellence
+
+Secuirty
+- Identity and access management (IAM)
+ - only authorized and authenticated users can access my stuff
+- detective controls
+ - analyze logs and audit controls
+ - there to identify breaches
+- Infrastructure protection
+ -  make sure systems are protected
+ - hardening and patching
+ - firewalls
+- data protection
+ - data classification
+ - encryption
+ - backup, replication and recovery
+- incident response
+ - respond to any potential security threat 
+ - timely recovery if you have a plan 
+ 
+Security Design
+- security at all layers
+ - make sure you secure everywhere
+- enable traceabillity
+ - logging and auditing all actions
+- apply principle of least priviledge
+ - make sure authorization is appropriate
+- focus on securing your system
+ - shared responsibillity model you can focus on you app and data
+- automate
+ - automate best practices
+ - software based security
+ - create a hardened patched image of server to create new instances with it 
+
+Reliabillity
+- recover from issues/failiure
+ - dynamically aquire resources and meet demand
+- appliy best practices for:
+ - foundations
+  - well planned handling xhanges
+ - change management
+  - how can change effect my sytsem?
+ - failure management
+  - self healing 
+  - anticipate failiure
+- anticipate, respond, and prevent failures
+
+Reliabillity Design
+- test recovery procedure
+- automatically recover
+ - use auto thresholds through CloudWatch for example
+- scale horizontally
+ - use multiple small resources
+- stop guesses capacity
+ - automate addition and removal of resources
+- manage change in automation
+
+Performance Efficiency
+- select customizable solutions
+ - optimze , right tool for right job
+- review to continually innovate
+- monitor AWS services
+- consider the trade-offs
+
+Performance Efficiency Design
+- democratized advanced technologies
+- go global in minutes
+- use a serverless archtecture
+- experment more often
+- have mechanical sympathy
+
 
 
 Inline `code` has `back-ticks around` it.
